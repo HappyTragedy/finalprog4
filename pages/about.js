@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
+import AboutContainer from '../components/About/AboutContainer';
 
 const about = () => {
   return (
     <>
       <Navbar />
-      <section>Esta es la pagina del team Mimo and Maimo</section>
+      <AboutContainer />
     </>
   );
 };

@@ -4,3 +4,11 @@
   border-radius: 10px;
   margin: 30px 0;
 }
+
+.results_shows{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 60px;
+  grid-row-gap: 40px;
+  grid-column: span 4;
+}

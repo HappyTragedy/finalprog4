@@ -10,11 +10,29 @@ const AppProvider = ({ defaultValue = [], children }) => {
   const [showLoading, setShowLoading] = useState(true);
 
   const handleGetShows = async (query) => {
-    console.log(query);
+    try {
+      const show = await axios
+        .get(`https://api.tvmaze.com/search/shows?q=${query}`)
+        .then((res) => setShowsData(res.show));
+      setLoading(false);
+      setShowLoading(false);
+      console.log(show);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleGetSingleShow = async (id) => {
-    console.log(id);
+    try {
+      const singleShow = await axios
+        .get(`https://api.tvmaze.com/shows/${id}`)
+        .then((res) => setSingleShowData(res.show));
+      setLoading(false);
+      setShowLoading(false);
+      console.log(singleShow);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

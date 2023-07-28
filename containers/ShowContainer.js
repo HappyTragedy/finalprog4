@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useAppContext } from '../contexts/AppContext';
 
 const ShowContainer = ({ id }) => {
+  const handleSingleShow = useAppContext;
   useEffect(() => {
     if (id) {
     }

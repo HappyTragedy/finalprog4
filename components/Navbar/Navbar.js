@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
@@ -8,7 +9,9 @@ const Navbar = () => {
       <div className={styles['logo']}>
         <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
       </div>
-      <div className={styles['navbar']}>About</div>
+      <Link href="/about">
+        <div className={styles['navbar']}>About</div>
+      </Link>
     </div>
   );
 };

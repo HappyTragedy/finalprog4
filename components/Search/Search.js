@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './Search.module.css';
 import { Formik } from 'formik';
+import { useAppContext } from '../../contexts/AppContext';
 
 const Search = () => {
+  const handleGetShows = useAppContext;
   return (
     <section>
-      <h2>Search shows</h2>
+      <h2>Search your show</h2>
       <div className={styles.form_container}>
         <Formik
           initialValues={{ show: '' }}
@@ -17,7 +19,7 @@ const Search = () => {
             return errors;
           }}
           onSubmit={(values) => {
-            // O_-
+            handleGetShows(query);
           }}
         >
           {({
@@ -39,7 +41,9 @@ const Search = () => {
               <div className={styles.error}>
                 {errors.show && touched.show && errors.show}
               </div>
-              <button type="submit">Search</button>
+              <button onClick={handleSubmit} type="submit">
+                Search
+              </button>
             </form>
           )}
         </Formik>
